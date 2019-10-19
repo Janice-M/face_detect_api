@@ -19,7 +19,7 @@ from PIL import Image as PImage
 
 
 def upload_image(request, image_id):
-
+    #puts image inside minio you can use local stack for this
     # check if minio bucket exist
     minioClient = Minio(settings.MINIO_STORAGE_ENDPOINT,
                         access_key=settings.MINIO_STORAGE_ACCESS_KEY,
@@ -81,3 +81,4 @@ class Image(APIView):
 
             # return Response({"status": request.GET.get("image_id")},   status=status.HTTP_200_OK)
         pass
+    #check more docu in the readme
